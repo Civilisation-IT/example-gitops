@@ -8,6 +8,13 @@
         "--kubeconfig",
         "/home/killian/Téléchargements/kubeconfig-killian-tf-cluster.yaml"
       ]
+    },
+    "kubescape": {
+      "command": "/home/killian/.kubescape/bin/kubescape",
+      "args": ["mcpserver"],
+      "env": {
+        "KUBECONFIG": "/home/killian/Téléchargements/kubeconfig-killian-tf-cluster.yaml"
+      }
     }
   }
 }
