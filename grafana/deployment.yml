@@ -40,6 +40,12 @@ spec:
           limits:
             memory: 258Mi
             cpu: 100m
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1000
+          runAsNonRoot: true
 ---
 apiVersion: v1
 kind: Service
