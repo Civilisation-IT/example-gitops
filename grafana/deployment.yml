@@ -40,6 +40,13 @@ spec:
           limits:
             memory: 258Mi
             cpu: 100m
+        volumeMounts:
+            - mountPath: /var/lib/grafana
+              name: grafana-pv
+      volumes:
+        - name: grafana-pv
+          persistentVolumeClaim:
+            claimName: grafana-pvc
 ---
 apiVersion: v1
 kind: Service
@@ -89,7 +96,7 @@ metadata:
     app: grafana
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
