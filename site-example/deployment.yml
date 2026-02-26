@@ -21,7 +21,7 @@ spec:
         name: site-example
         ports:
         - containerPort: 80
-          name: site-example-port
+          name: site-port
         resources:
           requests:
             memory: "32Mi"
