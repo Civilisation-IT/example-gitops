@@ -6,6 +6,7 @@ metadata:
     app: site-example
   namespace: site-example-demo
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: site-example
