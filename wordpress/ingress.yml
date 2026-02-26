@@ -4,9 +4,13 @@ metadata:
   name: demo-wordpress-ingress
   namespace: wordpress-demo
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    cert-manager.io/cluster-issuer: "letsencrypt"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+    - hosts:
+      - wordpress.lab-cesi.fr
+      secretName: wordpress-tls
   ingressClassName: nginx
   rules:
   - host: wordpress.lab-cesi.fr

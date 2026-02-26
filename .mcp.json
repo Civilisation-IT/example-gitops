@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "kubernetes": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "kubernetes-mcp-server@latest",
+        "--kubeconfig",
+        "/home/killian/Téléchargements/kubeconfig-killian-tf-cluster.yaml"
+      ]
+    }
+  }
+}
