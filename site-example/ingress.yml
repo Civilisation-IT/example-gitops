@@ -7,6 +7,10 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+    - hosts:
+      - site-example.lab-cesi.fr
+      secretName: letsencrypt-site-example
   ingressClassName: nginx
   rules:
   - host: site-example.lab-cesi.fr
