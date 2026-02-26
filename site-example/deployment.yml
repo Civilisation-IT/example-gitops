@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site-example
+  labels:
+    app: site-example
+  namespace: site-example-demo
+spec:
+  selector:
+    matchLabels:
+      app: site-example
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: site-example
+    spec:
+      containers:
+      - image: nginxdemos/hello
+        name: site-example
+        ports:
+        - containerPort: 80
+          name: site-example-port
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "10m"
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
